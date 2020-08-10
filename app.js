@@ -5,6 +5,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//Setup cross-origin
+app.use(require("cors")());
+
 // Bring in the router
 app.use("/user", require("./routes/user"));
 app.use("/chatroom", require("./routes/chatroom"));
