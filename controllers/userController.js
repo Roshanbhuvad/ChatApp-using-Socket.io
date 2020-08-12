@@ -9,7 +9,7 @@ exports.register = async (req, res) => {
   const emailRegex = /@gmail.com|@yahoo.com|@hotmail.com|@live.com/;
 
   if (!emailRegex.test(email)) throw "Email is not supported from your domain.";
-  if (password.length < 6) throw "Password must be at least 6 characters long.";
+  if (password.length < 6) throw "Password must be atleast 6 characters long.";
 
   const userExists = await User.findOne({
     email,

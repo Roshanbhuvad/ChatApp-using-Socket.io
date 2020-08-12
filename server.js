@@ -7,14 +7,14 @@ mongoose.connect(process.env.DATABASE, {
 });
 
 mongoose.connection.on("error", (err) => {
-  console.log("Mongoose Connection Error: " + err.message);
+  console.log("Mongoose Connection ERROR: " + err.message);
 });
 
 mongoose.connection.once("open", () => {
-  console.log("MongoDB connected!");
+  console.log("MongoDB Connected!");
 });
 
-// Bring in the models
+//Bring in the models
 require("./models/User");
 require("./models/Chatroom");
 require("./models/Message");
@@ -46,10 +46,12 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("Disconnected: " + socket.userId);
   });
+
   socket.on("joinRoom", ({ chatroomId }) => {
     socket.join(chatroomId);
-    console.log("A user Joined chatroom: " + chatroomId);
+    console.log("A user joined chatroom: " + chatroomId);
   });
+
   socket.on("leaveRoom", ({ chatroomId }) => {
     socket.leave(chatroomId);
     console.log("A user left chatroom: " + chatroomId);
