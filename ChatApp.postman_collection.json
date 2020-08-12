@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "eb553873-cd98-493d-a88f-52996c16d807",
+		"name": "ChatApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "http://localhost:8000/user/register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"roshan\",\r\n    \"email\": \"roshanbhuvad15@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"register"
+							]
+						},
+						"description": "User Registration"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/user/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"roshanbhuvad15@gmail.com\",\r\n    \"password\":\"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"login"
+							]
+						},
+						"description": "User sign in"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Chatroom",
+			"item": [
+				{
+					"name": "http://localhost:8000/chatroom",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmQyZmZlMTM2YjUzMWQ5OGU5YWRiOSIsImlhdCI6MTU5NjgwMTU2Nn0.VAsGY3adk5V9UkQWh4mAKVCfu-OddGBckJdDCEPz9gI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/chatroom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"chatroom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/chatroom",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMzNkOTAwMzliN2M2MjRlYzA0MmU5OCIsImlhdCI6MTU5NzIzNDk5NX0.Do5boxh7EhyjBVRZiQszSRkjZbt987HJkejC2S2l-bE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Polaris chatroom\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/chatroom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"chatroom"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
